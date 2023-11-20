@@ -1,0 +1,8 @@
+postgres_server: db
+postgres_user: {{ cookiecutter.postgres_user }}
+postgres_password: {{ cookiecutter.postgres_password }}
+postgres_db: {{ cookiecutter.postgres_db }}
+
+#{% raw %}
+app_image_version:  0.1.1
+#{% endraw %}

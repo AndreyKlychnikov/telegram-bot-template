@@ -1,0 +1,21 @@
+version: "3.3"
+
+services:
+  db:
+    image: postgres:15
+    volumes:
+      - app-db-data:/var/lib/postgresql/data/pgdata
+    env_file:
+      - .env
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
+
+  app:
+    image: {{ docker_image }}:{{ app_image_version }}
+    depends_on:
+      - db
+    env_file:
+      - .env
+
+volumes:
+  app-db-data:

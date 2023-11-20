@@ -1,0 +1,22 @@
+{
+  "project_name": "Telegram bot template",
+  "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
+  "project_short_description": "Custom description",
+  "on_bot_start_message": "Hello, I'm a bot! Use /help command for more information",
+  "on_bot_help_message": "Contact us if you have any questions",
+  "postgres_db": "app",
+  "postgres_user": "postgres",
+  "postgres_password": "changethis",
+  "docker_registry_url": "registry.hub.docker.com",
+  "docker_image_name": "YOUR_USER_NAME/{{ cookiecutter.project_slug }}",
+  "deploy_branch": "develop",
+  "vps_host": "YOUR_VPS_IP",
+  "vps_user": "root",
+  "_copy_without_render": [
+        "*.j2",
+        "app/",
+        "alembic/",
+        "ansible/deploy.yml",
+        "ansible/tasks"
+    ]
+}

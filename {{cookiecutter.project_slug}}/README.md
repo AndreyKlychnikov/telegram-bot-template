@@ -4,6 +4,13 @@
 
 ## Installation
 
+Firstly you need to create `.env` file from `compose.env`:
+```shell
+make init
+```
+then fill it with your data.
+
+
 For running app in docker use:
 ```shell
 make compose

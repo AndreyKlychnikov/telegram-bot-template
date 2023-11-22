@@ -1,5 +1,5 @@
 import enum
-import secrets
+from pathlib import Path
 from typing import Any, Dict, Optional
 
 from dotenv import load_dotenv
@@ -30,6 +30,7 @@ class Settings(BaseSettings):
     AMPLITUDE_TOKEN: str
 
     SENTRY_DSN: str | None = None
+    BASE_DIR: Path = Path(__file__).resolve().parent.parent
 
     @validator("SQLALCHEMY_DATABASE_URI", pre=True)
     def assemble_db_connection(cls, v: Optional[str], values: Dict[str, Any]) -> Any:
